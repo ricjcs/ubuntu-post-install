@@ -8,7 +8,7 @@
 # alterações no desktop, e remover e instalar pacotes.
 #
 # DATA DA CRIAÇÃO    : 2015
-# ÚLTIMA MODIFICAÇÃO : 11/11/2022
+# ÚLTIMA MODIFICAÇÃO : 13/11/2022
 #================================================================
 
 prgname="UBUNTU POST INSTALL"
@@ -150,11 +150,11 @@ install_extension_manager() {
     apt install gnome-shell-extension-manager
 }
 
-# SUPORTE À INSTALAÇÃO DE EXTENÇÕES GNOME VIA BROWSER
+# SUPORTE À INSTALAÇÃO DE EXTENSÕES GNOME VIA BROWSER
 install_support_extensions_browser() {
     clear
     echo "---------------------------------------------------"
-    echo "  Instalando suporte à intalação de extenções via browser"
+    echo "  Instalando suporte à intalação de extensões via browser"
     echo "---------------------------------------------------"
     apt install chrome-gnome-shell
 }
@@ -186,11 +186,11 @@ install_dconf_editor() {
     apt install dconf-editor
 } 
 
-# LISTA DE EXTENÇÕES GNOME
+# LISTA DE EXTENSÕES GNOME
 list_gnome_extensions() {
     clear
     echo "---------------------------------------------------"
-    echo "  Lista de extenções úteis para o Gnome"
+    echo "  Lista de extensões úteis para o Gnome"
     echo "---------------------------------------------------"
     echo "
     User Themes
@@ -210,6 +210,9 @@ list_gnome_extensions() {
 
     Transparent Top Bar (Adjustable transparency)
     https://extensions.gnome.org/extension/3960/transparent-top-bar-adjustable-transparency/
+
+    Gesture Improvements
+    https://extensions.gnome.org/extension/4245/gesture-improvements/
 
     Quick Settings Tweaker
     https://extensions.gnome.org/extension/5446/quick-settings-tweaker/
@@ -458,7 +461,7 @@ while true; do
     echo " B. Mostrar a percentagem da bateria"
     printf "\e[1;96m Pacotes: \e[m\n"
     echo " 1. Extension Manager"
-    echo " 2. Suporte à instalação de extenções via browser"
+    echo " 2. Suporte à instalação de extensões via browser"
     echo " 3. Gnome Tweaks"
     echo " 4. Gnome Sushi (QuickLook)"
     echo " 5. Dconf Editor"
