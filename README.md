@@ -14,4 +14,4 @@ sudo bash ubuntu-post-install.sh
 
 ## Screenshot
 
-![ubuntu-post-install](https://user-images.githubusercontent.com/11923491/201433766-c8b01ae4-8065-4209-bec0-ea72fbf71fbe.png)
+![ubuntu-post-install](https://user-images.githubusercontent.com/11923491/201545439-5cb20276-0103-464c-8a0f-f6c34a350ad5.png)
