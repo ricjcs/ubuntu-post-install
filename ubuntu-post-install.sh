@@ -8,7 +8,7 @@
 # alterações no desktop, e remover e instalar pacotes.
 #
 # DATA DA CRIAÇÃO    : 2015
-# ÚLTIMA MODIFICAÇÃO : 13/11/2022
+# ÚLTIMA MODIFICAÇÃO : 28/11/2022
 #================================================================
 
 prgname="UBUNTU POST INSTALL"
@@ -85,9 +85,7 @@ remove_pre_installed_packages() {
         gnome-mahjongg
         gnome-mines
     "
-    echo "  Tem a certeza que deseja remover estes pacotes? [s/n]"
-    printf "  "
-    read allOP
+    read -p $' Tem a certeza que deseja remover estes pacotes? [s/n]\n ' allOP
     case $allOP in
         S|s)
             apt purge        \
@@ -252,6 +250,9 @@ list_gnome_extensions() {
 
     User Avatar In Quick Settings
     https://extensions.gnome.org/extension/5506/user-avatar-in-quick-settings/
+
+    Dynamic Calendar and Clocks Icons
+    https://extensions.gnome.org/extension/5550/dynamic-calendar-and-clocks-icons/
     "
 }
 
@@ -404,9 +405,7 @@ several() {
        Chrome
        VSCode
     "
-    echo "  Tem a certeza que deseja efetuar as alterações? [s/n]"
-    printf " "
-    read allOP
+    read -p $' Tem a certeza que deseja efetuar as alterações? [s/n]\n ' allOP
     case $allOP in
         S|s)
             update_system
@@ -442,6 +441,26 @@ pause() {
 #   INICIO / MENU                               #################
 #################################################################
 check_root
+
+# PARÂMETROS POSICIONAIS ----------------------------------------
+help(){
+    echo \
+    "
+    Este programa aceita os seguintes parâmetros:
+    -p : Remove vários pacotes pré-instalados.
+    -x : Atualiza o sistema, faz algumas configurações e
+         instala diversos pacotes
+    -h, --help : Mostra esta ajuda.
+    "
+    pause
+}
+case "$1" in
+    -p) remove_pre_installed_packages ;;
+    -x) several ;;
+    -h|--help) help ;;
+esac
+
+# MENU ----------------------------------------------------------
 while true; do
     clear
     echo "---------------------------------------------------"
@@ -532,6 +551,10 @@ while true; do
         Script para atualizar o sistema, efetuar
         pequenas alterações no desktop, e remover
         e instalar pacotes.
+
+        Este programa aceita Parâmetros Posicionais.
+        Para os conhecer utilize o parâmetro -h ou --help 
+
         GITHUB: https://github.com/ricjcs/ubuntu-post-install
         AUTOR: Ricardo S.
         " ;;
